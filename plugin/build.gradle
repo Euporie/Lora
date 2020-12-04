@@ -1,0 +1,33 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation 'com.android.tools.build:gradle:3.5.3'
+}
+
+
+ext {
+    LoraVersion = '1.8.0'
+    LoraGroupId = 'so.libdvm'
+    LoraArtifactId = 'lora'
+}
+
+jar {
+    manifest {
+        attributes("Implementation-Version": project.ext.LoraVersion)
+    }
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('../repo'))
+            pom.groupId = project.ext.LoraGroupId
+            pom.artifactId = project.ext.LoraArtifactId
+            pom.version = project.ext.LoraVersion
+        }
+    }
+}
