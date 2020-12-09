@@ -19,7 +19,7 @@ classpath 'so.libdvm:lora:1.8.0'
 ```
 apply plugin: 'so.libdvm.lora'
 ```
-
+当编译完成后，在apk的根目录下会有`lora.properties`文件，里面包含了编译时的一些相关信息。
 ## License
     Copyright (C) 2020, Zhang Chen
     

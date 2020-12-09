@@ -18,7 +18,7 @@ Then, in application module's `build.gradle` file, add usage in the beginning as
 ```
 apply plugin: 'so.libdvm.lora'
 ```
-
+When build finished, you will find `lora.properties` file in apk file's root directory, it contains compile-time environment information.
 ## License
     Copyright (C) 2020, Zhang Chen
     
